@@ -1,0 +1,7 @@
+streamlit 
+pandas==1.4.4
+snowflake-snowpark-python==1.7.0
+numpy==1.23.4 
+snowflake-connector-python[pandas]
+datetime==5.2
+streamlit-modal==0.1.0
