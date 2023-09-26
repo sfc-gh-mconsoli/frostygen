@@ -6,7 +6,7 @@ Test it out! https://frostygen.streamlit.app/
 FrostyGen pushes data to Snowflake stages or tables, boosting your data preparation timelines and reducing the effort during your MVP/PoC first stages.
 Connecting to your Snowflake instance using sidebar config is essential unless you're planning to save the generated data locally on your machine (Export to File).
 
-![alt text](https://github.com/matteoconsoli92/frostygen/blob/main/screenshot.png?raw=true)
+![alt text](https://github.com/matteo-consoli/frostygen/blob/main/screenshot.png?raw=true)
 
 Do you want to run it on SiS (Streamlit in Snowflake)? Installing FrostyGen on your Snowflake account is very simple: 
 1) Download "frosty_gen_sis.py" and "logo.png" from the GitHub repository. 
