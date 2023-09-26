@@ -102,7 +102,7 @@ field_config = []
 for i in range(num_fields):
     cols_field=st.columns(2)
     with cols_field[0]:
-        field_name=st.text_input(f"Field {i+1}: Name", f"FIELD_NAME_{i}", key=f"field_name{i}")
+        field_name=st.text_input(f"Field {i+1}: Name", f"FIELD_NAME_{i}", key=f"field_name{i}").replace(" ","").upper()
     with cols_field[1]:
         field_type=st.selectbox(f"Field {i+1}: Type", ["Integer", "Text", "DateTime", "Double", "UUID", "DatabaseColumn"], key=f"field_type_{i}")   
         #--------------
@@ -237,18 +237,18 @@ export_option = st.sidebar.selectbox("Export Options", ["Save to File", "Export 
 
 if export_option == "Export to Snowflake Stage":
     if (hasattr(st.session_state, 'snowflake_connection')):
-        snowflake_stage = st.sidebar.text_input("Snowflake Stage")
+        snowflake_stage = st.sidebar.text_input("Snowflake Stage").replace(" ","").upper()
         # Snowflake export details
-        file_prefix = st.sidebar.text_input("File Prefix", "data.csv")
+        file_prefix = st.sidebar.text_input("File Prefix", "data.csv").replace(" ","").upper()
         file_suffix = "" 
     else:
         st.sidebar.warning("You are not connected to Snowflake yet.")
 
 elif export_option == "Export to Snowflake Table": 
     if (hasattr(st.session_state, 'snowflake_connection')):
-        database_name = st.sidebar.text_input("Database Name")
-        schema_name = st.sidebar.text_input("Schema Name")
-        table_name = st.sidebar.text_input("Table Name")
+        database_name = st.sidebar.text_input("Database Name").replace(" ","").upper()
+        schema_name = st.sidebar.text_input("Schema Name").replace(" ","").upper()
+        table_name = st.sidebar.text_input("Table Name").replace(" ","").upper()
         table_strategy = st.sidebar.selectbox("Table Strategy", ["CREATE IF NOT EXISTS", "CREATE OR REPLACE"],index=0)
         #st.sidebar.write("NOTE: Table will be created if it doesn't exist.")
     else:
